@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="inline">
 				<input 
 					name="movie" 
 					value={this.state.movie}

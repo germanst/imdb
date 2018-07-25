@@ -12,6 +12,7 @@ class App extends Component {
 		this.api = new Api();
 		this.state = {
 			movies: [],
+			favorites: [],
 		}
 	}
 
@@ -23,11 +24,25 @@ class App extends Component {
 		});
 	}
 
+	addFavorite = movie => {
+		if (!this.state.favorites.find(m => m.imdbID === movie.imdbID)) {
+			this.setState({
+				favorites: [...this.state.favorites, movie],
+			});
+		}
+	}
+
+	clear = () => {
+		this.setState({
+			favorites: [],
+		});
+	}
+
 	render() {
 		return (
 			<div className="App">
-				<Header searchMovie={this.searchMovie} />
-				<List movies={this.state.movies} />
+				<Header searchMovie={this.searchMovie} favorites={this.state.favorites} clear={this.clear} />
+				<List movies={this.state.movies} addFavorite={this.addFavorite} favorites={this.state.favorites}/>
 			</div>
 		);
 	}

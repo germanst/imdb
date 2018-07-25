@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Clear = () => (
-	<div>Clear</div>
+const Clear = (props) => (
+	<button className="inline" onClick={props.clear}>Clear</button>
 )
 
 export default Clear;

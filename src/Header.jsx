@@ -4,11 +4,11 @@ import Items from './Items';
 import Clear from './Clear';
 
 const Header = props => (
-	<React.Fragment>
+	<div>
 		<SearchBar searchMovie={props.searchMovie} />
-		<Items />
-		<Clear />
-	</React.Fragment>
+		<Items favorites={props.favorites} />
+		<Clear clear={props.clear}/>
+	</div>
 )
 
 export default Header;

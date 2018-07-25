@@ -1,11 +1,8 @@
 import React from 'react';
+import Movie from './Movie';
 
 const List = props => (
-	<ul>
-		{
-			props.movies.map(movie => <li>{movie.Title}</li>)
-		}
-	</ul>
-)
+	props.movies.map(movie => <Movie addFavorite={props.addFavorite} movie={movie} favorites={props.favorites} />)
+);
 
 export default List;
